@@ -27,7 +27,7 @@
 
 ## SMPlayer
 
-SMPlayer 是 MPlayer（纯命令行）的 QT 前端。推荐使用。
+SMPlayer 是 MPlayer（纯命令行）的 Qt 前端。推荐使用。
 
 ### 安装 SMPlayer
 
