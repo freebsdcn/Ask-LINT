@@ -97,7 +97,7 @@ proc           /proc       procfs  rw  0   0
 
 Window Maker 本身应该是有些字符串没有被处理到 `.po` 文件中 <https://repo.or.cz/wmaker-crm.git/blob/refs/heads/master:/po/zh_CN.po>，因此是中英文混合显示输出的。
 
-<https://sourceforge.net/p/wmakerconf/code/HEAD/tree/wmakerconf/trunk/po/> wmakerconf 在 07 年后就停止开发了。翻译了有极大也有可能性无法被合并。
+<https://sourceforge.net/p/wmakerconf/code/HEAD/tree/wmakerconf/trunk/po/> wmakerconf 在 07 年后就停止开发了。翻译了有极大可能性无法被合并。
 
 综上，中文环境处理难度较大，感兴趣的读者可以尝试推进。
 
