@@ -48,7 +48,7 @@ SMPlayer 是 MPlayer（纯命令行）的 QT 前端。推荐使用。
 
 视频 A、B 均正常
 
-![SMPlayers](../.gitbook/assets/smplayer1.png)
+![SMPlayer](../.gitbook/assets/smplayer1.png)
 
 ![SMPlayer](../.gitbook/assets/smplayer2.png)
 
