@@ -2,9 +2,7 @@
 
 ## zip
 
->**技巧**
->
->zip 中文或非英文字符乱码是很正常的一件事。因为编码不同，而一般国产操作系统（如 UOS、UbuntuKylin）之所以不乱码是打了补丁的。至于为什么这个补丁没有提交到上游，有知道的人欢迎 PR。
+在使用 zip 压缩中文或非英文字符时出现乱码是正常现象，因为编码方式不同。一般国产操作系统（如 UOS、Ubuntu Kylin）通过打补丁解决了此问题。关于该补丁未提交到上游的原因，如有了解者可提交 PR。
 
 ### 安装 zip
 
@@ -30,30 +28,29 @@ $ zip test.zip test # 压缩成 zip 文件
 
 ### zip 解压
 
-zip 解压的话，基本系统自带 `unzip`，不用安装。
+zip 文件解压时，系统通常自带 `unzip` 工具，无需额外安装。
 
 ```sh
 $ unzip test.zip # 解压 zip 文件到当前路径
 $ unzip test.zip -d /home/ykla/test # 解压到指定路径，-d 即 directory，目录的意思
 ```
 
-
 ## tar
 
 基本系统自带 `tar`，不用安装。
 
-tar 即“tape archive”（磁带归档），最早是为了在磁带上进行存储的。
+tar 是“tape archive”（磁带归档）的缩写，最初用于在磁带上进行文件存储。
 
 >**思考题**
 >
->>归档文件包就是压缩率为 `0` 的文件集合（将多个文件/目录打包成一个单一文件便于存储）。单纯的 `tar` 操作仅打包，不压缩。而压缩的本质是通过某种算法缩减文件所占用的体积，而非针对目录。所以常见压缩软件本质上是先将目录归档成为文件，然后再将其压缩。
+>>归档文件包是指压缩率为 `0` 的文件集合，即将多个文件或目录打包成单一文件以便存储。单纯使用 `tar` 只进行打包而不压缩。压缩的本质是通过算法减小文件占用的存储空间，而不是针对目录本身。因此，常见压缩软件通常先将目录归档为文件，然后再进行压缩。
 >
 >如何理解归档与压缩的关系？
 
 ### tar 压缩
   
 ```sh
-$ tar -cvf test.tar test # 压缩成 tar 格式文件。-c 即 Create，创建；
+$ tar -cvf test.tar test # 解压 tar 格式文件，可包括 test.tar.bz2、test.tar.gz、test.tar.xz 等格式
 $ tar -zcvf test.tar.gz test # 压缩成 gzip 格式文件。-z 即 gzip
 $ tar -jcvf test.tar.bz2 test # 压缩成 bzip2 格式文件。参数 -j 即 bzip2，请注意大小写
 $ tar -Jcvf test.tar.xz test # 压缩成 xz 格式文件。参数 -J 即 xz，请注意大小写
@@ -67,7 +64,7 @@ $ tar -xvf test.tar -C /home/ykla/mytest # 解压到指定路径
 ```
 
 - `x`：Extract 解压的意思
-- `v`：verbose 啰嗦模式即输出详细信息
+- `v`：verbose 输出详细信息模式
 - `f`：file 指定文件
 - `C`：`cd` 的意思，即指定路径
 
@@ -92,7 +89,7 @@ $ unxz test.tar.xz     # 解压并删除原文件
 
 ## 7z
 
-FreeBSD 操作系统下，7z 命令通过下载 `archivers/7-zip` 使用。
+在 FreeBSD 操作系统中，7z 命令可通过安装 `archivers/7-zip` 包使用。
 
 ### 安装 7-zip
 
@@ -115,7 +112,7 @@ FreeBSD 操作系统下，7z 命令通过下载 `archivers/7-zip` 使用。
 $ 7z a test.7z test # 把 test 文件压缩成 7z 文件。
 ```
 
-`-a` 就是 add，即把要压缩的文件添加到 test.7z
+`-a` 表示 add，将要压缩的文件添加到 test.7z。
 
 ### 7z 解压
 
@@ -128,7 +125,8 @@ $ 7z x test.7z -o/home/ykla/下载/test # 把 test.7z 解压到指定路径
 
 >**警告**
 >
->`-o/home/ykla/下载/test` 这中间并非拼写错误缺少空格（`-o` 和路径间没有空格），该 7z 命令就是如此设计的。有意者可参与改进提交 PR 进行修改。
+>`-o/home/ykla/下载/test` 中 `-o` 与路径之间没有空格，这并非拼写错误，而是 7z 命令的设计方式。如有意者可提交 PR 改进。
+
 
 ## rar
 
@@ -136,7 +134,7 @@ rar 是 Windows 上常见的压缩工具。
 
 ### 安装 rar
 
-- 通过 pkg;
+- 通过 pkg 安装：
 
 ```sh
 # pkg ins rar unrar
@@ -152,9 +150,11 @@ rar 是 Windows 上常见的压缩工具。
 
 ### rar 压缩
 
+```sh
+$ rar a archive.rar test
 ```
-$ rar a archive.rar test # -a 即 add，把文件添加到 archive.rar 的意思
-```
+
+`-a` 表示 add（添加），将文件添加到 `archive.rar`。
 
 ### rar 解压
 
@@ -177,7 +177,7 @@ $ zstd test.pdf
 
 - 使用 zstd 压缩文件夹
   
-zstd 不支持压缩文件夹（参见 [How can I compress a directory?](https://github.com/facebook/zstd/issues/1526)），故需要先打包成 tar：
+zstd 不直接支持压缩文件夹（参见 [How can I compress a directory?](https://github.com/facebook/zstd/issues/1526)），因此需要先将文件夹打包为 tar 文件。
 
 >**思考题**
 >
@@ -190,7 +190,7 @@ $ tar -cf test.tar /home/ykla/test/ # 先压缩成 tar。参数 -f 即 file（�
 再把 `test.tar` 压缩成 `test.tar.zst`
 
 ```sh
-$ zstd -o test.tar.zst test.tar # 参数 -o 代表 file，文件
+$ zstd -o test.tar.zst test.tar # 参数 -o 代表 file，用于指定输出文件
 ```
 
 ### zstd 解压
@@ -208,7 +208,7 @@ $ zstd -d test.tar.zst
 - 解压到指定路径
 
 ```sh
-$ zstd -d test.tar.zst -o /home/ykla/mytest # 参数 -d 即 decompress（解压缩）
+$ zstd -d test.tar.zst -o /home/ykla/mytest # 参数 -d 表示 decompress（解压缩）
 ```
 
 >**注意**
