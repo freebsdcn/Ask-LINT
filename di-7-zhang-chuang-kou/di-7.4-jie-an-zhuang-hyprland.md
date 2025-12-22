@@ -10,7 +10,7 @@
 
 Hyprland 是 Wayland 的一款合成器，支持窗口透明、模糊、圆角等等，动画效果做得不错。Hyprland 窗口焦点切换和传统桌面有所区别：鼠标光标放在哪个窗口上（没错是“放在”，不需要点击），窗口焦点就在哪里，通常没有 Alt+Tab 这种快捷键去切换。
 
-![hyprland on freebsd](../.gitbook/assets/hyprland.png)
+![hyprland on FreeBSD](../.gitbook/assets/hyprland.png)
 
 ## 安装 Hyprland
 
