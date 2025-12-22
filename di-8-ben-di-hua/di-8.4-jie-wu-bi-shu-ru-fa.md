@@ -175,7 +175,7 @@ patch applied.
 
 ### IBus 横排输出
 
-编辑 `~/.config/ibus/rime/build/ibus_rime.yaml`，把里面的 `horizontal: flase` 改成 `horizontal: true` 重新部署输入法或重启即可。
+编辑 `~/.config/ibus/rime/build/ibus_rime.yaml`，把里面的 `horizontal: false` 改成 `horizontal: true` 重新部署输入法或重启即可。
 
 ![](../.gitbook/assets/wubi6.png)
 
