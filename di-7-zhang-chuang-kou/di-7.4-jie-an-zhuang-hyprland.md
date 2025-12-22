@@ -798,7 +798,7 @@ text-wrong-color=ee2e2400
 
 bs-hl-color=ee2e24FF
 #caps-lock-key-hl-color=ffd204FF
-#caps-lcok-key-hl-color=ee2e24FF
+#caps-lock-key-hl-color=ee2e24FF
 #caps-lock-bs-hl-color=ee2e24FF
 #disable-caps-lock-text
 text-caps-lock-color=000000FF
