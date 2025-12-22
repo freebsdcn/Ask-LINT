@@ -90,7 +90,7 @@ dev.pcm.2.play.vchanmode: vchan format/rate selection: 0=fixed, 1=passthrough, 2
 # sysctl dev.pcm.2.play.vchanmode=1
 ```
 
-- 因为使用的 oss 驱动，muscipd 只能用 dop 传输模式，dop 模式要求开启 bitperfect
+- 因为使用的 oss 驱动，musicpd 只能用 dop 传输模式，dop 模式要求开启 bitperfect
 - 采样率 (vchanrate)，DSD 采样率为 44.1khz 的倍数，所以不要设为 48khz 的倍数不然会有杂音，在可能的情况下设置为最高，这里是 352.8khz。
 - 0（fixed）：在此模式下，音频设备使用固定的采样率和格式来处理多路音频流。1（passthrough）：在此模式下，音频设备尽可能地保持输入音频流的原始采样率和格式。2（adaptive）：在此模式下，音频设备会根据需要自动适应和转换输入音频流的采样率和格式。
 
