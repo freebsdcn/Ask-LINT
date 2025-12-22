@@ -149,15 +149,14 @@ rar 是 Windows 上常见的压缩工具。
 # cd /usr/ports/archivers/unrar/ && make install clean
 ```
 
-### 使用 rar
 
-- 压缩成 rar
+### rar 压缩
 
 ```
 $ rar a archive.rar test # -a 即 add，把文件添加到 archive.rar 的意思
 ```
 
-- 解压 rar
+### rar 解压
 
 ```sh
 $ unrar x archive.rar # 解压到当前路径。参数 -x 即 Extract，解压的意思
@@ -168,7 +167,7 @@ $ unrar x archive.rar /home/ykla/桌面/test/ # 解压缩到指定目录
 
 基本系统内置 zstd，无需安装。参见 [Add support for zstd-compressed user and kernel core dumps.](https://svnweb.freebsd.org/base?view=revision&revision=329240)
 
-### 压缩成 zstd
+### zstd 压缩
 
 - 使用 zstd 压缩单个文件
 
@@ -194,7 +193,7 @@ $ tar -cf test.tar /home/ykla/test/ # 先压缩成 tar。参数 -f 即 file（�
 $ zstd -o test.tar.zst test.tar # 参数 -o 代表 file，文件
 ```
 
-### 解压 zstd
+### zstd 解压
 
 - 解压到当前路径
 
