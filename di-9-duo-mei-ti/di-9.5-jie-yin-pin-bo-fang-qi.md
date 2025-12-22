@@ -96,9 +96,9 @@ dev.pcm.2.play.vchanmode: vchan format/rate selection: 0=fixed, 1=passthrough, 2
 
 >**技巧**
 >
->可以用 `dmesg` 查看可用采样率。在非播放非 dsd 文件时，采样率和音频文件采样率相同（或整数倍）为宜，这样可以避免重采样造成的音质损失。采样率不是越高越好，可以多试几次，找到最佳。
-
-```sh
+>可以用 `dmesg` 查看可用采样率。在播放非 DSD 文件时，采样率和音频文件采样率相同（或整数倍）为宜，这样可以避免重采样造成的音质损失。采样率不是越高越好，可以多试几次，找到最佳。
++
++```sh
 # dmesg|grep -i pcm2
 pcm2 on uaudio0
 # dmesg|grep -i uaudio0
