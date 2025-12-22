@@ -87,6 +87,6 @@ Unix 系统下相关软件有很多，这里我们简单介绍一下矢量制图
 
 ### 参考文献
 
-- Inscape [官方教程](https://inkscape.org/zh-hans/learn/tutorials/)
+- Inkscape [官方教程](https://inkscape.org/zh-hans/learn/tutorials/)
 
 
