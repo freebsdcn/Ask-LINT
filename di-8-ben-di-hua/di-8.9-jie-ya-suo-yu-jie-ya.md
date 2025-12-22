@@ -21,24 +21,22 @@
 # make install clean
 ```
 
-### zip 压缩与解压
-
-
-
-- 解压 zip
-
-zip 解压的话，基本系统自带 `unzip`，不用安装。
+### zip 压缩
 
 ```sh
 $ zip test.zip test # 压缩成 zip 文件
 ```
 
-- 压缩成 zip
 
-```
+### zip 解压
+
+zip 解压的话，基本系统自带 `unzip`，不用安装。
+
+```sh
 $ unzip test.zip # 解压 zip 文件到当前路径
 $ unzip test.zip -d /home/ykla/test # 解压到指定路径，-d 即 directory，目录的意思
 ```
+
 
 ## tar
 
@@ -52,9 +50,16 @@ tar 即“tape archive”（磁带归档），最早是为了在磁带上进行�
 >
 >如何理解归档与压缩的关系？
 
-### 解压 tar
+### tar 压缩
+  
+```sh
+$ tar -cvf test.tar test # 压缩成 tar 格式文件。-c 即 Create，创建；
+$ tar -zcvf test.tar.gz test # 压缩成 gzip 格式文件。-z 即 gzip
+$ tar -jcvf test.tar.bz2 test # 压缩成 bzip2 格式文件。参数 -j 即 bzip2，请注意大小写
+$ tar -Jcvf test.tar.xz test # 压缩成 xz 格式文件。参数 -J 即 xz，请注意大小写
+```
 
-
+### tar 解压
 
 ```sh
 $ tar -xvf test.tar # 解压 tar 格式文件、包括不限于 test.tar.bz2、test.tar.gz、test.tar.xz：
@@ -66,31 +71,23 @@ $ tar -xvf test.tar -C /home/ykla/mytest # 解压到指定路径
 - `f`：file 指定文件
 - `C`：`cd` 的意思，即指定路径
 
-### 压缩成 tar
-  
-```sh
-$ tar -cvf test.tar test # 压缩成 tar 格式文件。-c 即 Create，创建；
-$ tar -zcvf test.tar.gz test # 压缩成 gzip 格式文件。-z 即 gzip
-$ tar -jcvf test.tar.bz2 test # 压缩成 bzip2 格式文件。参数 -j 即 bzip2，请注意大小写
-$ tar -Jcvf test.tar.xz test # 压缩成 xz 格式文件。参数 -J 即 xz，请注意大小写
-```
 
 ## xz
 
 基本系统自带 `xz`、`unxz`，同样也不用安装。
 
-### 解压缩 `unxz`
-
-```sh
-$ unxz -k test.tar.xz  # 解压并保留原文件，参数 -k 即 keep（保留），下同
-$ unxz test.tar.xz     # 解压并删除原文件
-```
-
-### 压缩成 `xz`
+### `xz` 压缩
 
 ```sh
 $ xz -k test.txt  # 压缩并保留原文件
 $ xz test.pdf     # 压缩并删除原文件
+```
+
+### `unxz` 解压
+
+```sh
+$ unxz -k test.tar.xz  # 解压并保留原文件，参数 -k 即 keep（保留），下同
+$ unxz test.tar.xz     # 解压并删除原文件
 ```
 
 ## 7z
@@ -101,31 +98,37 @@ FreeBSD 操作系统下，7z 命令通过下载 `archivers/7-zip` 使用。
 
 - 使用 pkg：
 
-```
+```sh
 # pkg install 7-zip
 ```
 
 - 通过 Ports：
 
-```
+```sh
 # cd /usr/ports/archivers/7-zip/
 # make install clean
 ```
 
-### 示例
-
-- 压缩成 7z
+###  7z 压缩
   
 ```sh
-$ 7z a test.7z test # 压缩成 7z 文件。-a 就是 add，即把要压缩的文件添加到 test.7z
+$ 7z a test.7z test # 把 test 文件压缩成 7z 文件。
 ```
 
-- 解压缩 7z
+`-a` 就是 add，即把要压缩的文件添加到 test.7z
+
+### 7z 解压
 
 ```
 $ 7z x test.7z # 解压 7z 文件
-$ 7z x test.7z -o /home/ykla/下载/test # 解压到指定路径。-o 即 Output，指定输出路径
+$ 7z x test.7z -o/home/ykla/下载/test # 把 test.7z 解压到指定路径
 ```
+
+`-o` 即 Output，指定输出路径。
+
+>**警告**
+>
+>`-o/home/ykla/下载/test` 这中间并非拼写错误缺少空格（`-o` 和路径间没有空格），该 7z 命令就是如此设计的。有意者可参与改进提交 PR 进行修改。
 
 ## rar
 
