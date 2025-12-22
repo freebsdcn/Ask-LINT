@@ -169,7 +169,7 @@ Listen IP:631
 
 ![](../.gitbook/assets/cup9.png)
 
-惠普 Hp 打印机安装 Port `print/hplip` 即可。
+惠普 HP 打印机安装 Port `print/hplip` 即可。
 
 - FreeBSD 打印的测试页是什么样的？
 
