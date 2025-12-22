@@ -50,7 +50,7 @@ tar 是“tape archive”（磁带归档）的缩写，最初用于在磁带上�
 ### tar 压缩
   
 ```sh
-$ tar -cvf test.tar test # 解压 tar 格式文件，可包括 test.tar.bz2、test.tar.gz、test.tar.xz 等格式
+$ tar -cvf test.tar test # 压缩成 tar 格式文件。-c 即 Create，创建
 $ tar -zcvf test.tar.gz test # 压缩成 gzip 格式文件。-z 即 gzip
 $ tar -jcvf test.tar.bz2 test # 压缩成 bzip2 格式文件。参数 -j 即 bzip2，请注意大小写
 $ tar -Jcvf test.tar.xz test # 压缩成 xz 格式文件。参数 -J 即 xz，请注意大小写
@@ -59,7 +59,7 @@ $ tar -Jcvf test.tar.xz test # 压缩成 xz 格式文件。参数 -J 即 xz，�
 ### tar 解压
 
 ```sh
-$ tar -xvf test.tar # 解压 tar 格式文件、包括不限于 test.tar.bz2、test.tar.gz、test.tar.xz：
+$ tar -xvf test.tar # 解压 tar 格式文件，支持 test.tar.bz2、test.tar.gz、test.tar.xz 等格式
 $ tar -xvf test.tar -C /home/ykla/mytest # 解压到指定路径
 ```
 
@@ -109,7 +109,7 @@ $ unxz test.tar.xz     # 解压并删除原文件
 ###  7z 压缩
   
 ```sh
-$ 7z a test.7z test # 把 test 文件压缩成 7z 文件。
+$ 7z a test.7z test # 将 test 文件压缩成 7z 文件。
 ```
 
 `-a` 表示 add，将要压缩的文件添加到 test.7z。
@@ -118,7 +118,7 @@ $ 7z a test.7z test # 把 test 文件压缩成 7z 文件。
 
 ```
 $ 7z x test.7z # 解压 7z 文件
-$ 7z x test.7z -o/home/ykla/下载/test # 把 test.7z 解压到指定路径
+$ 7z x test.7z -o/home/ykla/下载/test # 将 test.7z 解压到指定路径
 ```
 
 `-o` 即 Output，指定输出路径。
@@ -187,7 +187,7 @@ zstd 不直接支持压缩文件夹（参见 [How can I compress a directory?](h
 $ tar -cf test.tar /home/ykla/test/ # 先压缩成 tar。参数 -f 即 file（文件）
 ```
 
-再把 `test.tar` 压缩成 `test.tar.zst`
+再将 `test.tar` 压缩成 `test.tar.zst`
 
 ```sh
 $ zstd -o test.tar.zst test.tar # 参数 -o 代表 file，用于指定输出文件
@@ -195,7 +195,7 @@ $ zstd -o test.tar.zst test.tar # 参数 -o 代表 file，用于指定输出文�
 
 ### zstd 解压
 
-- 解压到当前路径
+#### 解压到当前路径
 
 ```sh
 $ zstd -d test.tar.zst
@@ -205,7 +205,7 @@ $ zstd -d test.tar.zst
 >
 >这样解压出来的是 `test.tar`，还需要再使用 `tar` 解压一遍。
 
-- 解压到指定路径
+#### 解压到指定路径
 
 ```sh
 $ zstd -d test.tar.zst -o /home/ykla/mytest # 参数 -d 表示 decompress（解压缩）
