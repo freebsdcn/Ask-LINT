@@ -48,7 +48,7 @@ $ echo "/usr/local/bin/i3" > ~/.xinitrc
 如果使用 VirtualBox，下面可启用 VirtualBox 扩展：
 
 ```sh
-& echo "exec VBoxClient-all" >> ~/.config/i3/config
+$ echo "exec VBoxClient-all" >> ~/.config/i3/config
 ```
 
 ## 参考文献
