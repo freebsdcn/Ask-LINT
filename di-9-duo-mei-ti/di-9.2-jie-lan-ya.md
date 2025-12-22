@@ -47,7 +47,7 @@ Set it up? [yes]:
 
 ## 故障排除与未竟事宜
 
-- logitech m337 配对连接后会自动断开。
+- Logitech M337 配对连接后会自动断开。
 
 解决方案：删除 `/var/db/bthidd.hids` 文件中对应鼠标的 `bd_addr` 行 `xx:xx:xx:xx:xx`。重启 `bthidd` 服务 `# service bthidd restart`。
 
