@@ -4,11 +4,11 @@
 >
 >请勿使用 Ports 中的金山 WPS（WPS Office），因为该 Port 已无人维护。建议自行构建兼容层后安装使用。
 
-## 基于 RockyLinux 兼容层（FreeBSD Port）
+## 基于 Rocky Linux 兼容层（FreeBSD Port）
 
 >**注意**
 >
->请先参考本书其他章节完成 RockyLinux 兼容层（FreeBSD Port）的安装。
+>请先参考本书其他章节完成 Rocky Linux 兼容层（FreeBSD Port）的安装。
 
 ### 安装 rpm 工具
 
