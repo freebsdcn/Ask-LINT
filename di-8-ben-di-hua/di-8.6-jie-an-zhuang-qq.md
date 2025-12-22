@@ -109,10 +109,10 @@ fcitx5 输入法正常：
 新开一个终端，输入 `reboot` 重启 FreeBSD，否则新设置的密码可能无法生效。
 
 ```sh
-# chroot /compat/arch/ /bin/bash #进入 Arch 兼容层
-# su test # 此时位于 Arch 兼容层！切换到普通用户才能使用 aur
+# chroot /compat/arch/ /bin/bash # 进入 Arch 兼容层
+# su test # 此时位于 Arch 兼容层！切换到普通用户才能使用 AUR
 $ yay -S linuxqq # 此时位于 Arch 兼容层！此时用户为 test
-$ exit # 此时位于 Arch 兼容层！退回到 root 用户
+$ exit # 切换回 root
 # # 此时位于 Arch 兼容层，用户已切换回 root
 ```
 
@@ -136,7 +136,7 @@ $ exit # 此时位于 Arch 兼容层！退回到 root 用户
 
 ```sh
 # chroot /compat/ubuntu/ /bin/bash # 进入 Ubuntu 兼容层
-# wget https://dldir1v6.qq.com/qqfile/qq/QQNT/Linux/QQ_3.2.18_250626_amd64_01.deb # 此时位于 Ubuntu 兼容层。下载 QQ
+# wget https://dldir1v6.qq.com/qqfile/qq/QQNT/Linux/QQ_3.2.18_250626_amd64_01.deb # 下载 QQ。此时位于 Ubuntu 兼容层。
 # apt install ./QQ*.deb  # 在 Ubuntu 兼容层安装 QQ
 ```
 
