@@ -56,9 +56,7 @@ CUPS 全称 Common Unix Printing System（通用 Unix 打印系统），支持�
 
 ## 向局域网共享打印服务
 
-若不设置该允许局域网访问，则除了 `localhost` 外的机器无法使用。
-
----
+若不设置“允许局域网访问”，则除了 `localhost` 外的机器无法使用。
 
 编辑 `/usr/local/etc/cups/cupsd.conf`：
 
